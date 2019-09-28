@@ -4,9 +4,9 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     filename: "bundle.js",
-    sourceMapFilename: 'bundle.js.map',
+    sourceMapFilename: "bundle.js.map"
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -17,5 +17,12 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      REACT_APP_FIREBASE_APIKEY: JSON.stringify(
+        process.env.REACT_APP_FIREBASE_APIKEY
+      )
+    })
+  ]
 };
