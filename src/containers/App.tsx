@@ -2,19 +2,23 @@ import * as React from "react";
 import { bindActionCreators } from "redux";
 import { connect, Dispatch } from "react-redux";
 import styled from "styled-components";
-import * as App_actions from "../actions/app";
 import { firebaseDb } from "../../firebase/index";
+import * as App_actions from "../actions/app";
+import Header from "../components/Header/Header";
+
+// Firebaseと接続
+const messagesRef = firebaseDb.ref("messages");
 
 interface Props {
   name: string;
   app_actions: any;
 }
 
-const messagesRef = firebaseDb.ref("messages");
+interface State {}
 
-export class App extends React.Component<Props> {
+export class App extends React.Component<Props, State> {
   componentDidMount() {
-    //TODO:後で削除
+    // TODO:後で削除
     // Realtime Databaseと接続できているかの確認用
     messagesRef.on("value", snapshot => {
       let messages = snapshot.val();
@@ -26,17 +30,13 @@ export class App extends React.Component<Props> {
     const { app_actions, name } = this.props;
 
     return (
-      <div>
-        <Container>
-          {name ? (
-            `${name} さん、こんにちは。`
-          ) : (
-            <button onClick={() => app_actions.login("test")}>
-              こんにちは
-            </button>
-          )}
-        </Container>
-      </div>
+      <Container>
+        <Header name={name} clickSubmitHnadler={app_actions.login} />
+        <Main>
+          <div>messages</div>
+          {name ? "メッセージフォーム" : null}
+        </Main>
+      </Container>
     );
   }
 }
@@ -61,4 +61,9 @@ export default connect(
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
+`;
+
+const Main = styled.div`
+  margin-top: 56px;
+  height: 100px;
 `;

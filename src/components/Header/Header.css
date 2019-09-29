@@ -1,0 +1,31 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(82, 179, 217, 0.9);
+  height: 56px;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo {
+  margin-left: 1rem;
+  color: #fff;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.user-name {
+  float: right;
+  top: 12px;
+  right: 1rem;
+  color: #fff;
+}
