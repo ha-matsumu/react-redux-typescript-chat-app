@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+
 module.exports = {
   mode: "development",
   entry: "./src/index.tsx",
@@ -12,6 +14,16 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: "ts-loader"
+      },
+      {
+        test: /\.css/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: { url: false }
+          }
+        ]
       }
     ]
   },

@@ -49532,6 +49532,135 @@ var tmp_5 = tmp.XhrIo;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".msr_search_06 {\n  height: 32px;\n  width: 240px;\n  /* position: relative; */\n}\n.msr_search_06 input[type=\"text\"] {\n  width: 240px;\n  height: 32px;\n  padding: 4px 40px 4px 8px;\n  border: none;\n  -webkit-border-radius: 32px;\n  -moz-border-radius: 32px;\n  border-radius: 32px;\n  -webkit-appearance: none;\n  outline: 0;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  position: absolute;\n  background: #eeeeee;\n  top: 12px;\n  right: 1rem;\n  backface-visibility: hidden;\n  -webkit-transition: 0.25s ease-out;\n  -moz-transition: 0.25s ease-out;\n  -o-transition: 0.25s ease-out;\n  transition: 0.25s ease-out;\n}\n.msr_search_06 input[type=\"text\"]:focus {\n  background: #f6f6f6;\n}\n.msr_search_06 button {\n  width: 64px;\n  height: 32px;\n  color: #fff;\n  border: none;\n  -webkit-border-radius: 16px;\n  -moz-border-radius: 16px;\n  border-radius: 16px;\n  background: #1b73ba;\n  display: inline-block;\n  -webkit-appearance: none;\n  outline: 0;\n  position: absolute;\n  top: 12px;\n  right: 1rem;\n  cursor: pointer;\n  backface-visibility: hidden;\n  -webkit-transition: 0.3s ease-out;\n  -moz-transition: 0.3s ease-out;\n  -o-transition: 0.3s ease-out;\n  transition: 0.3s ease-out;\n}\n.msr_search_06 button:hover {\n  opacity: 0.8;\n}\n", ""]);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Header/Header.css":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Header/Header.css ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: rgba(82, 179, 217, 0.9);\n  height: 56px;\n}\n\n.wrapper {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  padding: 0 1rem;\n}\n\n.logo {\n  margin-left: 1rem;\n  color: #fff;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.user-name {\n  float: right;\n  top: 12px;\n  right: 1rem;\n  color: #fff;\n}\n", ""]);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], "{").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      // eslint-disable-next-line prefer-destructuring
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = modules[_i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = "(".concat(item[2], ") and (").concat(mediaQuery, ")");
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot).concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
+
 /***/ "./node_modules/firebase/dist/index.cjs.js":
 /*!*************************************************!*\
   !*** ./node_modules/firebase/dist/index.cjs.js ***!
@@ -90535,6 +90664,299 @@ function warning(message) {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var stylesInDom = {};
+
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
+
+    return memo;
+  };
+}();
+
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
+
+      memo[target] = styleTarget;
+    }
+
+    return memo[target];
+  };
+}();
+
+function listToStyles(list, options) {
+  var styles = [];
+  var newStyles = {};
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var css = item[1];
+    var media = item[2];
+    var sourceMap = item[3];
+    var part = {
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    };
+
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = {
+        id: id,
+        parts: [part]
+      });
+    } else {
+      newStyles[id].parts.push(part);
+    }
+  }
+
+  return styles;
+}
+
+function addStylesToDom(styles, options) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i];
+    var domStyle = stylesInDom[item.id];
+    var j = 0;
+
+    if (domStyle) {
+      domStyle.refs++;
+
+      for (; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j]);
+      }
+
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j], options));
+      }
+    } else {
+      var parts = [];
+
+      for (; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j], options));
+      }
+
+      stylesInDom[item.id] = {
+        id: item.id,
+        refs: 1,
+        parts: parts
+      };
+    }
+  }
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+
+  if (typeof options.attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : undefined;
+
+    if (nonce) {
+      options.attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(options.attributes).forEach(function (key) {
+    style.setAttribute(key, options.attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  }
+
+  if (sourceMap && btoa) {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var singleton = null;
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
+  }
+
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {};
+  options.attributes = typeof options.attributes === 'object' ? options.attributes : {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
+  }
+
+  var styles = listToStyles(list, options);
+  addStylesToDom(styles, options);
+  return function update(newList) {
+    var mayRemove = [];
+
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i];
+      var domStyle = stylesInDom[item.id];
+
+      if (domStyle) {
+        domStyle.refs--;
+        mayRemove.push(domStyle);
+      }
+    }
+
+    if (newList) {
+      var newStyles = listToStyles(newList, options);
+      addStylesToDom(newStyles, options);
+    }
+
+    for (var _i = 0; _i < mayRemove.length; _i++) {
+      var _domStyle = mayRemove[_i];
+
+      if (_domStyle.refs === 0) {
+        for (var j = 0; j < _domStyle.parts.length; j++) {
+          _domStyle.parts[j]();
+        }
+
+        delete stylesInDom[_domStyle.id];
+      }
+    }
+  };
+};
+
+/***/ }),
+
 /***/ "./node_modules/styled-components/dist/styled-components.browser.esm.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/styled-components/dist/styled-components.browser.esm.js ***!
@@ -93537,6 +93959,110 @@ exports.login = login;
 
 /***/ }),
 
+/***/ "./src/components/Form/UserForm/UserForm.css":
+/*!***************************************************!*\
+  !*** ./src/components/Form/UserForm/UserForm.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./UserForm.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "./src/components/Form/UserForm/UserForm.tsx":
+/*!***************************************************!*\
+  !*** ./src/components/Form/UserForm/UserForm.tsx ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./UserForm.css */ "./src/components/Form/UserForm/UserForm.css");
+var UserForm = function (_a) {
+    var clickSubmitHnadler = _a.clickSubmitHnadler;
+    var _b = React.useState(""), name = _b[0], setName = _b[1];
+    return (React.createElement("div", { className: "msr_search_06" },
+        React.createElement("input", { type: "text", onChange: function (e) { return setName(e.target.value); }, placeholder: "\u304A\u540D\u524D" }),
+        React.createElement("button", { onClick: function () { return clickSubmitHnadler(name); } }, "\u30ED\u30B0\u30A4\u30F3")));
+};
+exports["default"] = UserForm;
+
+
+/***/ }),
+
+/***/ "./src/components/Header/Header.css":
+/*!******************************************!*\
+  !*** ./src/components/Header/Header.css ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./Header.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Header/Header.css");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "./src/components/Header/Header.tsx":
+/*!******************************************!*\
+  !*** ./src/components/Header/Header.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./Header.css */ "./src/components/Header/Header.css");
+var UserForm_1 = __webpack_require__(/*! ../Form/UserForm/UserForm */ "./src/components/Form/UserForm/UserForm.tsx");
+var Navbar = function (_a) {
+    var name = _a.name, clickSubmitHnadler = _a.clickSubmitHnadler;
+    return (React.createElement("header", null,
+        React.createElement("div", { className: "wrapper" },
+            React.createElement("h3", { className: "logo" }, "CHAT APP"),
+            React.createElement("div", { className: "spacer" }),
+            name ? (React.createElement("h4", { className: "user-name" }, "ようこそ, " + name + " さん")) : (React.createElement(UserForm_1["default"], { clickSubmitHnadler: clickSubmitHnadler })))));
+};
+exports["default"] = Navbar;
+
+
+/***/ }),
+
 /***/ "./src/containers/App.tsx":
 /*!********************************!*\
   !*** ./src/containers/App.tsx ***!
@@ -93568,8 +94094,10 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var App_actions = __webpack_require__(/*! ../actions/app */ "./src/actions/app.ts");
 var index_1 = __webpack_require__(/*! ../../firebase/index */ "./firebase/index.ts");
+var App_actions = __webpack_require__(/*! ../actions/app */ "./src/actions/app.ts");
+var Header_1 = __webpack_require__(/*! ../components/Header/Header */ "./src/components/Header/Header.tsx");
+// Firebaseと接続
 var messagesRef = index_1.firebaseDb.ref("messages");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
@@ -93577,7 +94105,7 @@ var App = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.componentDidMount = function () {
-        //TODO:後で削除
+        // TODO:後で削除
         // Realtime Databaseと接続できているかの確認用
         messagesRef.on("value", function (snapshot) {
             var messages = snapshot.val();
@@ -93586,8 +94114,11 @@ var App = /** @class */ (function (_super) {
     };
     App.prototype.render = function () {
         var _a = this.props, app_actions = _a.app_actions, name = _a.name;
-        return (React.createElement("div", null,
-            React.createElement(Container, null, name ? (name + " \u3055\u3093\u3001\u3053\u3093\u306B\u3061\u306F\u3002") : (React.createElement("button", { onClick: function () { return app_actions.login("test"); } }, "\u3053\u3093\u306B\u3061\u306F")))));
+        return (React.createElement(Container, null,
+            React.createElement(Header_1["default"], { name: name, clickSubmitHnadler: app_actions.login }),
+            React.createElement(Main, null,
+                React.createElement("div", null, "messages"),
+                name ? "メッセージフォーム" : null)));
     };
     return App;
 }(React.Component));
@@ -93604,7 +94135,8 @@ function mapDispatchToProps(dispatch) {
 }
 exports["default"] = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(App);
 var Container = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  max-width: 800px;\n  margin: 0 auto;\n"], ["\n  max-width: 800px;\n  margin: 0 auto;\n"])));
-var templateObject_1;
+var Main = styled_components_1["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-top: 56px;\n  height: 100px;\n"], ["\n  margin-top: 56px;\n  height: 100px;\n"])));
+var templateObject_1, templateObject_2;
 
 
 /***/ }),
