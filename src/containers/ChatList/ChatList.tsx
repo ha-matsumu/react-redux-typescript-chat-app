@@ -30,13 +30,13 @@ class ChatList extends React.Component<Props> {
   };
 
   render() {
-    const { chatList } = this.props;
+    const { name, chatList } = this.props;
 
     return (
       <div className="chat-list-wrapper">
         {chatList
           ? Object.keys(chatList).map(key => {
-              return <Chat key={key} chat={chatList[key]} />;
+              return <Chat key={key} name={name} chat={chatList[key]} />;
             })
           : null}
         <div className="message-end" ref={this.messageEndRef} />

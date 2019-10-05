@@ -9,15 +9,16 @@ interface Chat {
 
 interface Props {
   key: string;
+  name: string;
   chat: Chat;
 }
 
-const Chat: React.SFC<Props> = ({ chat }) => {
+const Chat: React.SFC<Props> = ({ name, chat }) => {
   return (
     <div className="chat">
       <p className="username">{chat.username}</p>
+      <p className="time">{chat.time}</p>
       <p className="chat-text">{chat.message}</p>
-      <span className="time">{chat.time}</span>
     </div>
   );
 };

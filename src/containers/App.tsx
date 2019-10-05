@@ -80,8 +80,8 @@ const Form = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #fff;
-  line-height: 65px;
+  background-color: #2e3339;
+  line-height: 80px;
   padding: 0 5px;
   box-sizing: border-box;
   border-top: solid 1px #ccc;

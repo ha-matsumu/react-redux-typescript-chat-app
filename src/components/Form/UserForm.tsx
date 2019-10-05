@@ -9,14 +9,14 @@ const UserForm: React.FC<Props> = ({ clickSubmitHnadler }) => {
   const [name, setName] = React.useState("");
 
   return (
-    <div className="form">
+    <form onSubmit={() => clickSubmitHnadler(name)}>
       <input
         type="text"
         onChange={e => setName(e.target.value)}
         placeholder="お名前"
       />
-      <button onClick={() => clickSubmitHnadler(name)}>ログイン</button>
-    </div>
+      <input type="submit" value="ログイン" />
+    </form>
   );
 };
 

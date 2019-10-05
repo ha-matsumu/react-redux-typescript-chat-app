@@ -1,9 +1,13 @@
 .chat {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
+  background-color: #626b72;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+}
+
+.dark {
+  border-color: #ccc;
+  background-color: #ddd;
 }
 
 .chat::after {
@@ -13,18 +17,21 @@
 }
 
 .username {
+  color: #edf2f5;
   float: left;
-  max-width: 60px;
-  width: 100%;
+  /* margin-right: 20px; */
   font-weight: bold;
-  font-size: 15px;
-}
-
-.chat-text {
-  text-align: center;
+  margin: 0 20px 10px 0;
 }
 
 .time {
-  float: right;
+  float: left;
+  margin: 0 20px 10px 0;
   color: #aaa;
+}
+
+.chat-text {
+  color: #edf2f5;
+  clear: both;
+  margin: 0;
 }

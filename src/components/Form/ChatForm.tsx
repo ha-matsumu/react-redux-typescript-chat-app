@@ -44,10 +44,10 @@ const ChatForm: React.FC<Props> = ({ name, addChat }) => {
   };
 
   return (
-    <div className="form">
+    <form onSubmit={addChatHandler}>
       <input type="text" {...bind} placeholder="メッセージ" />
-      <button onClick={addChatHandler}>送信</button>
-    </div>
+      <input type="submit" value="送信" />
+    </form>
   );
 };
 

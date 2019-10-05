@@ -1,8 +1,8 @@
-.form {
+form {
   text-align: center;
 }
 
-input {
+input[type="text"] {
   max-width: 800px;
   width: calc(90% - 100px);
   height: 32px;
@@ -24,11 +24,11 @@ input {
   transition: 0.25s ease-out;
 }
 
-input:focus {
+input[type="text"]:focus {
   background: #f6f6f6;
 }
 
-button {
+input[type="submit"] {
   margin-left: 10px;
   width: 100px;
   height: 32px;
@@ -37,7 +37,7 @@ button {
   -webkit-border-radius: 16px;
   -moz-border-radius: 16px;
   border-radius: 16px;
-  background: #1b73ba;
+  background: #0c71f8;
   display: inline-block;
   -webkit-appearance: none;
   outline: 0;
@@ -49,6 +49,6 @@ button {
   transition: 0.3s ease-out;
 }
 
-button:hover {
+button[type="submit"]:hover {
   opacity: 0.8;
 }
