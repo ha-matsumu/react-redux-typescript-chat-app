@@ -1,0 +1,11 @@
+.chat-list-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  margin-top: 80px;
+  margin-bottom: 84px;
+}
+
+.message-end {
+  height: 5px;
+}

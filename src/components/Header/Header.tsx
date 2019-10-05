@@ -1,22 +1,20 @@
 import * as React from "react";
 import "./Header.css";
-import UserForm from "../Form/UserForm/UserForm";
 
 interface Props {
   name: string;
-  clickSubmitHnadler: Function;
 }
 
-const Navbar: React.SFC<Props> = ({ name, clickSubmitHnadler }) => {
+const Navbar: React.SFC<Props> = ({ name }) => {
   return (
     <header>
       <div className="wrapper">
-        <h3 className="logo">CHAT APP</h3>
+        <h2 className="logo">CHAT APP</h2>
         <div className="spacer" />
         {name ? (
           <h4 className="user-name">{"ようこそ, " + name + " さん"}</h4>
         ) : (
-          <UserForm clickSubmitHnadler={clickSubmitHnadler} />
+          <h4 className="user-name">{"ようこそ, ゲスト さん"}</h4>
         )}
       </div>
     </header>

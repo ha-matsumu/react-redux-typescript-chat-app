@@ -5,7 +5,9 @@ import styled from "styled-components";
 import * as App_actions from "../actions/app";
 import * as Chat_actions from "../actions/chat";
 import Header from "../components/Header/Header";
-import Main from "./Main/Main";
+import ChatList from "./ChatList/ChatList";
+import UserForm from "../components/Form/UserForm";
+import ChatForm from "../components/Form/ChatForm";
 
 interface Props {
   name: string;
@@ -27,8 +29,19 @@ export class App extends React.Component<Props, State> {
 
     return (
       <Container>
-        <Header name={name} clickSubmitHnadler={app_actions.login} />
-        <Main name={name} chatList={chatList} addChat={this.props.addChat} />
+        <Header name={name} />
+        <ChatList
+          name={name}
+          chatList={chatList}
+          addChat={this.props.addChat}
+        />
+        <Form>
+          {this.props.name ? (
+            <ChatForm name={this.props.name} addChat={this.props.addChat} />
+          ) : (
+            <UserForm clickSubmitHnadler={app_actions.login} />
+          )}
+        </Form>
       </Container>
     );
   }
@@ -59,4 +72,17 @@ export default connect(
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
+`;
+
+const Form = styled.div`
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #2e3339;
+  line-height: 80px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border-top: solid 1px #ccc;
 `;
