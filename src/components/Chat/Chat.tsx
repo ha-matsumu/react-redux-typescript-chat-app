@@ -1,19 +1,18 @@
 import * as React from "react";
 import "./Chat.css";
 
-export interface Chat {
+interface Chat {
   message: string;
   username: string;
   time: string;
 }
 
 interface Props {
-  key: number;
-  name: string;
+  key: string;
   chat: Chat;
 }
 
-const Chat: React.SFC<Props> = ({ name, chat }) => {
+const Chat: React.SFC<Props> = ({ chat }) => {
   return (
     <div className="chat">
       <p className="username">{chat.username}</p>

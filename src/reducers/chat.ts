@@ -1,11 +1,11 @@
 interface InitialState {
-  chatList: [];
+  chatList: object;
   loading: boolean;
   error: boolean;
 }
 
 const initialState: InitialState = {
-  chatList: [],
+  chatList: {},
   loading: false,
   error: false
 };
@@ -34,6 +34,15 @@ const fetchChatListSuccess = (state, action) => {
   };
 };
 
+const addChatSuccess = (state, action) => {
+  return {
+    ...state,
+    chatList: [...state.chatList, action.inputData],
+    loading: false,
+    error: false
+  };
+};
+
 const chatReducer = (state = initialState, action) => {
   switch (action.type) {
     case "REQEST_START":
@@ -42,6 +51,8 @@ const chatReducer = (state = initialState, action) => {
       return requestError(state, action);
     case "FETCH_CHAT_LIST_SUCCESS":
       return fetchChatListSuccess(state, action);
+    case "ADD_CHAT_SUCCESS":
+      return addChatSuccess(state, action);
     default:
       return state;
   }
