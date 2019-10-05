@@ -1,0 +1,54 @@
+.form {
+  text-align: center;
+}
+
+input {
+  max-width: 800px;
+  width: calc(90% - 100px);
+  height: 32px;
+  padding: 4px 8px;
+  border: none;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  border-radius: 32px;
+  -webkit-appearance: none;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #eeeeee;
+  backface-visibility: hidden;
+  -webkit-transition: 0.25s ease-out;
+  -moz-transition: 0.25s ease-out;
+  -o-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+}
+
+input:focus {
+  background: #f6f6f6;
+}
+
+button {
+  margin-left: 10px;
+  width: 100px;
+  height: 32px;
+  color: #fff;
+  border: none;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  background: #1b73ba;
+  display: inline-block;
+  -webkit-appearance: none;
+  outline: 0;
+  cursor: pointer;
+  backface-visibility: hidden;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+button:hover {
+  opacity: 0.8;
+}

@@ -49546,30 +49546,16 @@ exports.push([module.i, ".chat {\n  border: 2px solid #dedede;\n  background-col
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/ChatForm/ChatForm.css":
-/*!***************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/ChatForm/ChatForm.css ***!
-  \***************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/Form.css":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/Form.css ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".chat-form {\n  height: 32px;\n  position: relative;\n}\n\n.chat-form input[type=\"text\"] {\n  width: 100%;\n  max-width: 800px;\n  height: 32px;\n  padding: 4px 40px 4px 8px;\n  border: none;\n  -webkit-border-radius: 32px;\n  -moz-border-radius: 32px;\n  border-radius: 32px;\n  -webkit-appearance: none;\n  outline: 0;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  position: absolute;\n  background: #eeeeee;\n  backface-visibility: hidden;\n  -webkit-transition: 0.25s ease-out;\n  -moz-transition: 0.25s ease-out;\n  -o-transition: 0.25s ease-out;\n  transition: 0.25s ease-out;\n}\n.chat-form input[type=\"text\"]:focus {\n  background: #f6f6f6;\n}\n.chat-form button {\n  width: 64px;\n  height: 32px;\n  color: #fff;\n  border: none;\n  -webkit-border-radius: 16px;\n  -moz-border-radius: 16px;\n  border-radius: 16px;\n  background: #1b73ba;\n  display: inline-block;\n  -webkit-appearance: none;\n  outline: 0;\n  position: absolute;\n  right: 0;\n  cursor: pointer;\n  backface-visibility: hidden;\n  -webkit-transition: 0.3s ease-out;\n  -moz-transition: 0.3s ease-out;\n  -o-transition: 0.3s ease-out;\n  transition: 0.3s ease-out;\n}\n.chat-form button:hover {\n  opacity: 0.8;\n}\n", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css":
-/*!***************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".msr_search_06 {\n  height: 32px;\n  width: 240px;\n  /* position: relative; */\n}\n.msr_search_06 input[type=\"text\"] {\n  width: 240px;\n  height: 32px;\n  padding: 4px 40px 4px 8px;\n  border: none;\n  -webkit-border-radius: 32px;\n  -moz-border-radius: 32px;\n  border-radius: 32px;\n  -webkit-appearance: none;\n  outline: 0;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  position: absolute;\n  background: #eeeeee;\n  top: 12px;\n  right: 1rem;\n  backface-visibility: hidden;\n  -webkit-transition: 0.25s ease-out;\n  -moz-transition: 0.25s ease-out;\n  -o-transition: 0.25s ease-out;\n  transition: 0.25s ease-out;\n}\n.msr_search_06 input[type=\"text\"]:focus {\n  background: #f6f6f6;\n}\n.msr_search_06 button {\n  width: 64px;\n  height: 32px;\n  color: #fff;\n  border: none;\n  -webkit-border-radius: 16px;\n  -moz-border-radius: 16px;\n  border-radius: 16px;\n  background: #1b73ba;\n  display: inline-block;\n  -webkit-appearance: none;\n  outline: 0;\n  position: absolute;\n  top: 12px;\n  right: 1rem;\n  cursor: pointer;\n  backface-visibility: hidden;\n  -webkit-transition: 0.3s ease-out;\n  -moz-transition: 0.3s ease-out;\n  -o-transition: 0.3s ease-out;\n  transition: 0.3s ease-out;\n}\n.msr_search_06 button:hover {\n  opacity: 0.8;\n}\n", ""]);
+exports.push([module.i, ".form {\n  text-align: center;\n}\n\ninput {\n  max-width: 800px;\n  width: calc(90% - 100px);\n  height: 32px;\n  padding: 4px 8px;\n  border: none;\n  -webkit-border-radius: 32px;\n  -moz-border-radius: 32px;\n  border-radius: 32px;\n  -webkit-appearance: none;\n  outline: 0;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  background: #eeeeee;\n  backface-visibility: hidden;\n  -webkit-transition: 0.25s ease-out;\n  -moz-transition: 0.25s ease-out;\n  -o-transition: 0.25s ease-out;\n  transition: 0.25s ease-out;\n}\n\ninput:focus {\n  background: #f6f6f6;\n}\n\nbutton {\n  margin-left: 10px;\n  width: 100px;\n  height: 32px;\n  color: #fff;\n  border: none;\n  -webkit-border-radius: 16px;\n  -moz-border-radius: 16px;\n  border-radius: 16px;\n  background: #1b73ba;\n  display: inline-block;\n  -webkit-appearance: none;\n  outline: 0;\n  cursor: pointer;\n  backface-visibility: hidden;\n  -webkit-transition: 0.3s ease-out;\n  -moz-transition: 0.3s ease-out;\n  -o-transition: 0.3s ease-out;\n  transition: 0.3s ease-out;\n}\n\nbutton:hover {\n  opacity: 0.8;\n}\n", ""]);
 
 
 /***/ }),
@@ -49583,21 +49569,21 @@ exports.push([module.i, ".msr_search_06 {\n  height: 32px;\n  width: 240px;\n  /
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: rgba(82, 179, 217, 0.9);\n  height: 56px;\n}\n\n.wrapper {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  padding: 0 1rem;\n}\n\n.logo {\n  margin-left: 1rem;\n  color: #fff;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.user-name {\n  float: right;\n  top: 12px;\n  right: 1rem;\n  color: #fff;\n}\n", ""]);
+exports.push([module.i, "header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: rgba(82, 179, 217);\n  height: 56px;\n}\n\n.wrapper {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  padding: 0 1rem;\n}\n\n.logo {\n  margin-left: 1rem;\n  color: #fff;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.user-name {\n  float: right;\n  top: 12px;\n  right: 1rem;\n  color: #fff;\n}\n", ""]);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/containers/Main/Main.css":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/containers/Main/Main.css ***!
-  \**************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/containers/ChatList/ChatList.css":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/containers/ChatList/ChatList.css ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".chat-list-wrapper {\n  margin-top: 65px;\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+exports.push([module.i, ".chat-list-wrapper {\n  margin-top: 65px;\n  margin-bottom: 65px;\n  width: 100%;\n  height: 100%;\n}\n\n.message-end {\n  height: 5px;\n}\n", ""]);
 
 
 /***/ }),
@@ -94188,37 +94174,10 @@ exports["default"] = Chat;
 
 /***/ }),
 
-/***/ "./src/components/Form/ChatForm/ChatForm.css":
-/*!***************************************************!*\
-  !*** ./src/components/Form/ChatForm/ChatForm.css ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./ChatForm.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/ChatForm/ChatForm.css");
-
-if (typeof content === 'string') {
-  content = [[module.i, content, '']];
-}
-
-var options = {}
-
-options.insert = "head";
-options.singleton = false;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
-
-if (content.locals) {
-  module.exports = content.locals;
-}
-
-
-/***/ }),
-
-/***/ "./src/components/Form/ChatForm/ChatForm.tsx":
-/*!***************************************************!*\
-  !*** ./src/components/Form/ChatForm/ChatForm.tsx ***!
-  \***************************************************/
+/***/ "./src/components/Form/ChatForm.tsx":
+/*!******************************************!*\
+  !*** ./src/components/Form/ChatForm.tsx ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -94237,8 +94196,8 @@ var __assign = (this && this.__assign) || function () {
 };
 exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-__webpack_require__(/*! ./ChatForm.css */ "./src/components/Form/ChatForm/ChatForm.css");
-var useInput_1 = __webpack_require__(/*! ../../../customHooks/useInput */ "./src/customHooks/useInput.ts");
+__webpack_require__(/*! ./Form.css */ "./src/components/Form/Form.css");
+var useInput_1 = __webpack_require__(/*! ../../customHooks/useInput */ "./src/customHooks/useInput.ts");
 var ChatForm = function (_a) {
     var name = _a.name, addChat = _a.addChat;
     var _b = useInput_1.useInput(""), value = _b.value, bind = _b.bind, reset = _b.reset;
@@ -94257,7 +94216,7 @@ var ChatForm = function (_a) {
         addChat(chat);
         reset(); // フォーム初期化
     };
-    return (React.createElement("div", { className: "chat-form" },
+    return (React.createElement("div", { className: "form" },
         React.createElement("input", __assign({ type: "text" }, bind, { placeholder: "\u30E1\u30C3\u30BB\u30FC\u30B8" })),
         React.createElement("button", { onClick: addChatHandler }, "\u9001\u4FE1")));
 };
@@ -94266,14 +94225,14 @@ exports["default"] = ChatForm;
 
 /***/ }),
 
-/***/ "./src/components/Form/UserForm/UserForm.css":
-/*!***************************************************!*\
-  !*** ./src/components/Form/UserForm/UserForm.css ***!
-  \***************************************************/
+/***/ "./src/components/Form/Form.css":
+/*!**************************************!*\
+  !*** ./src/components/Form/Form.css ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./UserForm.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./Form.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/Form.css");
 
 if (typeof content === 'string') {
   content = [[module.i, content, '']];
@@ -94284,7 +94243,7 @@ var options = {}
 options.insert = "head";
 options.singleton = false;
 
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
 
 if (content.locals) {
   module.exports = content.locals;
@@ -94293,10 +94252,10 @@ if (content.locals) {
 
 /***/ }),
 
-/***/ "./src/components/Form/UserForm/UserForm.tsx":
-/*!***************************************************!*\
-  !*** ./src/components/Form/UserForm/UserForm.tsx ***!
-  \***************************************************/
+/***/ "./src/components/Form/UserForm.tsx":
+/*!******************************************!*\
+  !*** ./src/components/Form/UserForm.tsx ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -94304,11 +94263,11 @@ if (content.locals) {
 
 exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-__webpack_require__(/*! ./UserForm.css */ "./src/components/Form/UserForm/UserForm.css");
+__webpack_require__(/*! ./Form.css */ "./src/components/Form/Form.css");
 var UserForm = function (_a) {
     var clickSubmitHnadler = _a.clickSubmitHnadler;
     var _b = React.useState(""), name = _b[0], setName = _b[1];
-    return (React.createElement("div", { className: "msr_search_06" },
+    return (React.createElement("div", { className: "form" },
         React.createElement("input", { type: "text", onChange: function (e) { return setName(e.target.value); }, placeholder: "\u304A\u540D\u524D" }),
         React.createElement("button", { onClick: function () { return clickSubmitHnadler(name); } }, "\u30ED\u30B0\u30A4\u30F3")));
 };
@@ -94356,14 +94315,13 @@ if (content.locals) {
 exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Header.css */ "./src/components/Header/Header.css");
-var UserForm_1 = __webpack_require__(/*! ../Form/UserForm/UserForm */ "./src/components/Form/UserForm/UserForm.tsx");
 var Navbar = function (_a) {
-    var name = _a.name, clickSubmitHnadler = _a.clickSubmitHnadler;
+    var name = _a.name;
     return (React.createElement("header", null,
         React.createElement("div", { className: "wrapper" },
-            React.createElement("h3", { className: "logo" }, "CHAT APP"),
+            React.createElement("h2", { className: "logo" }, "CHAT APP"),
             React.createElement("div", { className: "spacer" }),
-            name ? (React.createElement("h4", { className: "user-name" }, "ようこそ, " + name + " さん")) : (React.createElement(UserForm_1["default"], { clickSubmitHnadler: clickSubmitHnadler })))));
+            name ? (React.createElement("h4", { className: "user-name" }, "ようこそ, " + name + " さん")) : (React.createElement("h4", { className: "user-name" }, "ようこそ, ゲスト さん")))));
 };
 exports["default"] = Navbar;
 
@@ -94404,7 +94362,9 @@ var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_m
 var App_actions = __webpack_require__(/*! ../actions/app */ "./src/actions/app.ts");
 var Chat_actions = __webpack_require__(/*! ../actions/chat */ "./src/actions/chat.ts");
 var Header_1 = __webpack_require__(/*! ../components/Header/Header */ "./src/components/Header/Header.tsx");
-var Main_1 = __webpack_require__(/*! ./Main/Main */ "./src/containers/Main/Main.tsx");
+var ChatList_1 = __webpack_require__(/*! ./ChatList/ChatList */ "./src/containers/ChatList/ChatList.tsx");
+var UserForm_1 = __webpack_require__(/*! ../components/Form/UserForm */ "./src/components/Form/UserForm.tsx");
+var ChatForm_1 = __webpack_require__(/*! ../components/Form/ChatForm */ "./src/components/Form/ChatForm.tsx");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
@@ -94416,8 +94376,9 @@ var App = /** @class */ (function (_super) {
     App.prototype.render = function () {
         var _a = this.props, app_actions = _a.app_actions, name = _a.name, chatList = _a.chatList;
         return (React.createElement(Container, null,
-            React.createElement(Header_1["default"], { name: name, clickSubmitHnadler: app_actions.login }),
-            React.createElement(Main_1["default"], { name: name, chatList: chatList, addChat: this.props.addChat })));
+            React.createElement(Header_1["default"], { name: name }),
+            React.createElement(ChatList_1["default"], { name: name, chatList: chatList, addChat: this.props.addChat }),
+            React.createElement(Form, null, this.props.name ? (React.createElement(ChatForm_1["default"], { name: this.props.name, addChat: this.props.addChat })) : (React.createElement(UserForm_1["default"], { clickSubmitHnadler: app_actions.login })))));
     };
     return App;
 }(React.Component));
@@ -94439,19 +94400,20 @@ function mapDispatchToProps(dispatch) {
 }
 exports["default"] = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(App);
 var Container = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  max-width: 800px;\n  margin: 0 auto;\n"], ["\n  max-width: 800px;\n  margin: 0 auto;\n"])));
-var templateObject_1;
+var Form = styled_components_1["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: fixed;\n  bottom: 0px;\n  left: 0;\n  right: 0;\n  width: 100%;\n  background-color: #fff;\n  line-height: 65px;\n  padding: 0 5px;\n  box-sizing: border-box;\n  border-top: solid 1px #ccc;\n"], ["\n  position: fixed;\n  bottom: 0px;\n  left: 0;\n  right: 0;\n  width: 100%;\n  background-color: #fff;\n  line-height: 65px;\n  padding: 0 5px;\n  box-sizing: border-box;\n  border-top: solid 1px #ccc;\n"])));
+var templateObject_1, templateObject_2;
 
 
 /***/ }),
 
-/***/ "./src/containers/Main/Main.css":
-/*!**************************************!*\
-  !*** ./src/containers/Main/Main.css ***!
-  \**************************************/
+/***/ "./src/containers/ChatList/ChatList.css":
+/*!**********************************************!*\
+  !*** ./src/containers/ChatList/ChatList.css ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./Main.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/containers/Main/Main.css");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./ChatList.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/containers/ChatList/ChatList.css");
 
 if (typeof content === 'string') {
   content = [[module.i, content, '']];
@@ -94471,10 +94433,10 @@ if (content.locals) {
 
 /***/ }),
 
-/***/ "./src/containers/Main/Main.tsx":
-/*!**************************************!*\
-  !*** ./src/containers/Main/Main.tsx ***!
-  \**************************************/
+/***/ "./src/containers/ChatList/ChatList.tsx":
+/*!**********************************************!*\
+  !*** ./src/containers/ChatList/ChatList.tsx ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -94495,31 +94457,38 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-__webpack_require__(/*! ./Main.css */ "./src/containers/Main/Main.css");
+__webpack_require__(/*! ./ChatList.css */ "./src/containers/ChatList/ChatList.css");
 var Chat_1 = __webpack_require__(/*! ../../components/Chat/Chat */ "./src/components/Chat/Chat.tsx");
-var ChatForm_1 = __webpack_require__(/*! ../../components/Form/ChatForm/ChatForm */ "./src/components/Form/ChatForm/ChatForm.tsx");
-var Main = /** @class */ (function (_super) {
-    __extends(Main, _super);
-    function Main() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var ChatList = /** @class */ (function (_super) {
+    __extends(ChatList, _super);
+    function ChatList(props) {
+        var _this = _super.call(this, props) || this;
+        // チャット更新時のスクロール
+        _this.scrollToBottom = function () {
+            _this.messageEndRef.current.scrollIntoView({ behavior: "smooth" });
+        };
+        _this.messageEndRef = React.createRef();
+        return _this;
     }
-    Main.prototype.render = function () {
+    ChatList.prototype.componentDidMount = function () {
+        this.scrollToBottom();
+    };
+    ChatList.prototype.componentDidUpdate = function () {
+        this.scrollToBottom();
+    };
+    ChatList.prototype.render = function () {
         var chatList = this.props.chatList;
-        var keys = [];
-        for (var key in chatList) {
-            keys.unshift(key); // keyを逆順で取得
-        }
         return (React.createElement("div", { className: "chat-list-wrapper" },
-            this.props.name ? (React.createElement(ChatForm_1["default"], { name: this.props.name, addChat: this.props.addChat })) : null,
             chatList
-                ? keys.map(function (key) {
+                ? Object.keys(chatList).map(function (key) {
                     return React.createElement(Chat_1["default"], { key: key, chat: chatList[key] });
                 })
-                : null));
+                : null,
+            React.createElement("div", { className: "message-end", ref: this.messageEndRef })));
     };
-    return Main;
+    return ChatList;
 }(React.Component));
-exports["default"] = Main;
+exports["default"] = ChatList;
 
 
 /***/ }),

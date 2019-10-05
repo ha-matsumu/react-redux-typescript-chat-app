@@ -4,7 +4,7 @@ import "./Chat.css";
 interface Chat {
   message: string;
   username: string;
-  time: string;
+  time: Date;
 }
 
 interface Props {
