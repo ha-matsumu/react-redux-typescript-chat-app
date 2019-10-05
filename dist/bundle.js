@@ -49546,6 +49546,20 @@ exports.push([module.i, ".chat {\n  border: 2px solid #dedede;\n  background-col
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/ChatForm/ChatForm.css":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/ChatForm/ChatForm.css ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".chat-form {\n  height: 32px;\n  position: relative;\n}\n\n.chat-form input[type=\"text\"] {\n  width: 100%;\n  max-width: 800px;\n  height: 32px;\n  padding: 4px 40px 4px 8px;\n  border: none;\n  -webkit-border-radius: 32px;\n  -moz-border-radius: 32px;\n  border-radius: 32px;\n  -webkit-appearance: none;\n  outline: 0;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  position: absolute;\n  background: #eeeeee;\n  backface-visibility: hidden;\n  -webkit-transition: 0.25s ease-out;\n  -moz-transition: 0.25s ease-out;\n  -o-transition: 0.25s ease-out;\n  transition: 0.25s ease-out;\n}\n.chat-form input[type=\"text\"]:focus {\n  background: #f6f6f6;\n}\n.chat-form button {\n  width: 64px;\n  height: 32px;\n  color: #fff;\n  border: none;\n  -webkit-border-radius: 16px;\n  -moz-border-radius: 16px;\n  border-radius: 16px;\n  background: #1b73ba;\n  display: inline-block;\n  -webkit-appearance: none;\n  outline: 0;\n  position: absolute;\n  right: 0;\n  cursor: pointer;\n  backface-visibility: hidden;\n  -webkit-transition: 0.3s ease-out;\n  -moz-transition: 0.3s ease-out;\n  -o-transition: 0.3s ease-out;\n  transition: 0.3s ease-out;\n}\n.chat-form button:hover {\n  opacity: 0.8;\n}\n", ""]);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css":
 /*!***************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/UserForm/UserForm.css ***!
@@ -49583,7 +49597,7 @@ exports.push([module.i, "header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".chat-list-wrapper {\n  margin-top: 65px;\n  height: 100px;\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, ".chat-list-wrapper {\n  margin-top: 65px;\n  width: 100%;\n  height: 100%;\n}\n", ""]);
 
 
 /***/ }),
@@ -94053,6 +94067,12 @@ var fetchChatListSuccess = function (chatList) {
         chatList: chatList
     };
 };
+var addChatSuccess = function (inputData) {
+    return {
+        type: "ADD_CHAT_SUCCESS",
+        inputData: inputData
+    };
+};
 exports.fetchChatList = function () { return function (dispatch) { return __awaiter(void 0, void 0, void 0, function () {
     var error_1;
     return __generator(this, function (_a) {
@@ -94083,6 +94103,33 @@ exports.fetchChatList = function () { return function (dispatch) { return __awai
                 _a.sent();
                 return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
+        }
+    });
+}); }; };
+exports.addChat = function (inputData) { return function (dispatch) { return __awaiter(void 0, void 0, void 0, function () {
+    var chat, error_2;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 4, , 6]);
+                return [4 /*yield*/, dispatch(requestStart())];
+            case 1:
+                _a.sent();
+                chat = index_1.firebaseDb.ref("messages/").push();
+                return [4 /*yield*/, chat.set(inputData)];
+            case 2:
+                _a.sent();
+                return [4 /*yield*/, dispatch(addChatSuccess(inputData))];
+            case 3:
+                _a.sent();
+                return [3 /*break*/, 6];
+            case 4:
+                error_2 = _a.sent();
+                return [4 /*yield*/, dispatch(requestError(error_2))];
+            case 5:
+                _a.sent();
+                return [3 /*break*/, 6];
+            case 6: return [2 /*return*/];
         }
     });
 }); }; };
@@ -94130,13 +94177,91 @@ exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Chat.css */ "./src/components/Chat/Chat.css");
 var Chat = function (_a) {
-    var name = _a.name, chat = _a.chat;
+    var chat = _a.chat;
     return (React.createElement("div", { className: "chat" },
         React.createElement("p", { className: "username" }, chat.username),
         React.createElement("p", { className: "chat-text" }, chat.message),
         React.createElement("span", { className: "time" }, chat.time)));
 };
 exports["default"] = Chat;
+
+
+/***/ }),
+
+/***/ "./src/components/Form/ChatForm/ChatForm.css":
+/*!***************************************************!*\
+  !*** ./src/components/Form/ChatForm/ChatForm.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./ChatForm.css */ "./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/components/Form/ChatForm/ChatForm.css");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "./src/components/Form/ChatForm/ChatForm.tsx":
+/*!***************************************************!*\
+  !*** ./src/components/Form/ChatForm/ChatForm.tsx ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./ChatForm.css */ "./src/components/Form/ChatForm/ChatForm.css");
+var useInput_1 = __webpack_require__(/*! ../../../customHooks/useInput */ "./src/customHooks/useInput.ts");
+var ChatForm = function (_a) {
+    var name = _a.name, addChat = _a.addChat;
+    var _b = useInput_1.useInput(""), value = _b.value, bind = _b.bind, reset = _b.reset;
+    var addChatHandler = function (e) {
+        e.preventDefault();
+        // 何も入力されていない場合は、処理終了
+        if (value === "") {
+            return;
+        }
+        var now = new Date(); // 現在日時取得
+        var chat = {
+            username: name,
+            message: value,
+            time: now.toLocaleString()
+        };
+        addChat(chat);
+        reset(); // フォーム初期化
+    };
+    return (React.createElement("div", { className: "chat-form" },
+        React.createElement("input", __assign({ type: "text" }, bind, { placeholder: "\u30E1\u30C3\u30BB\u30FC\u30B8" })),
+        React.createElement("button", { onClick: addChatHandler }, "\u9001\u4FE1")));
+};
+exports["default"] = ChatForm;
 
 
 /***/ }),
@@ -94292,7 +94417,7 @@ var App = /** @class */ (function (_super) {
         var _a = this.props, app_actions = _a.app_actions, name = _a.name, chatList = _a.chatList;
         return (React.createElement(Container, null,
             React.createElement(Header_1["default"], { name: name, clickSubmitHnadler: app_actions.login }),
-            React.createElement(Main_1["default"], { name: name, chatList: chatList })));
+            React.createElement(Main_1["default"], { name: name, chatList: chatList, addChat: this.props.addChat })));
     };
     return App;
 }(React.Component));
@@ -94308,7 +94433,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         app_actions: redux_1.bindActionCreators(App_actions, dispatch),
-        fetchChatList: function () { return dispatch(Chat_actions.fetchChatList()); }
+        fetchChatList: function () { return dispatch(Chat_actions.fetchChatList()); },
+        addChat: function (inputData) { return dispatch(Chat_actions.addChat(inputData)); }
     };
 }
 exports["default"] = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(App);
@@ -94371,22 +94497,58 @@ exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Main.css */ "./src/containers/Main/Main.css");
 var Chat_1 = __webpack_require__(/*! ../../components/Chat/Chat */ "./src/components/Chat/Chat.tsx");
+var ChatForm_1 = __webpack_require__(/*! ../../components/Form/ChatForm/ChatForm */ "./src/components/Form/ChatForm/ChatForm.tsx");
 var Main = /** @class */ (function (_super) {
     __extends(Main, _super);
     function Main() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Main.prototype.render = function () {
-        var chatList = this.props.chatList.map(function (chat, index) {
-            return React.createElement(Chat_1["default"], { key: index, name: name, chat: chat });
-        });
+        var chatList = this.props.chatList;
+        var keys = [];
+        for (var key in chatList) {
+            keys.unshift(key); // keyを逆順で取得
+        }
         return (React.createElement("div", { className: "chat-list-wrapper" },
-            chatList,
-            this.props.name ? "チャットフォーム" : null));
+            this.props.name ? (React.createElement(ChatForm_1["default"], { name: this.props.name, addChat: this.props.addChat })) : null,
+            chatList
+                ? keys.map(function (key) {
+                    return React.createElement(Chat_1["default"], { key: key, chat: chatList[key] });
+                })
+                : null));
     };
     return Main;
 }(React.Component));
 exports["default"] = Main;
+
+
+/***/ }),
+
+/***/ "./src/customHooks/useInput.ts":
+/*!*************************************!*\
+  !*** ./src/customHooks/useInput.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+exports.useInput = function (initialValue) {
+    var _a = react_1.useState(initialValue), value = _a[0], setValue = _a[1];
+    return {
+        value: value,
+        setValue: setValue,
+        reset: function () { return setValue(""); },
+        bind: {
+            value: value,
+            onChange: function (event) {
+                setValue(event.target.value);
+            }
+        }
+    };
+};
 
 
 /***/ }),
@@ -94456,9 +94618,16 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 exports.__esModule = true;
 var initialState = {
-    chatList: [],
+    chatList: {},
     loading: false,
     error: false
 };
@@ -94471,6 +94640,9 @@ var requestError = function (state, action) {
 var fetchChatListSuccess = function (state, action) {
     return __assign(__assign({}, state), { chatList: action.chatList, loading: false, error: false });
 };
+var addChatSuccess = function (state, action) {
+    return __assign(__assign({}, state), { chatList: __spreadArrays(state.chatList, [action.inputData]), loading: false, error: false });
+};
 var chatReducer = function (state, action) {
     if (state === void 0) { state = initialState; }
     switch (action.type) {
@@ -94480,6 +94652,8 @@ var chatReducer = function (state, action) {
             return requestError(state, action);
         case "FETCH_CHAT_LIST_SUCCESS":
             return fetchChatListSuccess(state, action);
+        case "ADD_CHAT_SUCCESS":
+            return addChatSuccess(state, action);
         default:
             return state;
     }

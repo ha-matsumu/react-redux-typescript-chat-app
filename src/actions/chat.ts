@@ -23,13 +23,34 @@ const fetchChatListSuccess = (chatList: []) => {
   };
 };
 
+const addChatSuccess = (inputData: object) => {
+  return {
+    type: "ADD_CHAT_SUCCESS",
+    inputData
+  };
+};
+
 export const fetchChatList = () => async dispatch => {
   try {
     await dispatch(requestStart());
+
     messagesRef.on("value", async snapshot => {
       let chatList = snapshot.val();
       await dispatch(fetchChatListSuccess(chatList));
     });
+  } catch (error) {
+    await dispatch(requestError(error));
+  }
+};
+
+export const addChat = inputData => async dispatch => {
+  try {
+    await dispatch(requestStart());
+
+    let chat = firebaseDb.ref("messages/").push();
+    await chat.set(inputData);
+
+    await dispatch(addChatSuccess(inputData));
   } catch (error) {
     await dispatch(requestError(error));
   }

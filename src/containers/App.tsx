@@ -9,9 +9,10 @@ import Main from "./Main/Main";
 
 interface Props {
   name: string;
-  chatList: [];
+  chatList: object;
   app_actions: any;
-  fetchChatList: any;
+  fetchChatList: Function;
+  addChat: Function;
 }
 
 interface State {}
@@ -27,7 +28,7 @@ export class App extends React.Component<Props, State> {
     return (
       <Container>
         <Header name={name} clickSubmitHnadler={app_actions.login} />
-        <Main name={name} chatList={chatList} />
+        <Main name={name} chatList={chatList} addChat={this.props.addChat} />
       </Container>
     );
   }
@@ -45,7 +46,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
     app_actions: bindActionCreators(App_actions, dispatch),
-    fetchChatList: () => dispatch(Chat_actions.fetchChatList())
+    fetchChatList: () => dispatch(Chat_actions.fetchChatList()),
+    addChat: inputData => dispatch(Chat_actions.addChat(inputData))
   };
 }
 

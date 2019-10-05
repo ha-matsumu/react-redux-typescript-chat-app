@@ -1,21 +1,33 @@
 import * as React from "react";
 import "./Main.css";
-import Chat, { Chat as ChatTypes } from "../../components/Chat/Chat";
+import Chat from "../../components/Chat/Chat";
+import ChatForm from "../../components/Form/ChatForm/ChatForm";
 
 interface Props {
   name: string;
-  chatList: ChatTypes[];
+  chatList: object;
+  addChat: Function;
 }
 
 class Main extends React.Component<Props> {
   render() {
-    const chatList = this.props.chatList.map((chat, index) => {
-      return <Chat key={index} name={name} chat={chat} />;
-    });
+    const { chatList } = this.props;
+
+    let keys = [];
+    for (let key in chatList) {
+      keys.unshift(key); // keyを逆順で取得
+    }
+
     return (
       <div className="chat-list-wrapper">
-        {chatList}
-        {this.props.name ? "チャットフォーム" : null}
+        {this.props.name ? (
+          <ChatForm name={this.props.name} addChat={this.props.addChat} />
+        ) : null}
+        {chatList
+          ? keys.map(key => {
+              return <Chat key={key} chat={chatList[key]} />;
+            })
+          : null}
       </div>
     );
   }
