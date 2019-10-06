@@ -23,7 +23,7 @@ class ChatList extends React.Component<Props> {
     this.scrollToBottom();
   }
 
-  // チャット更新時のスクロール
+  // スクロール制御
   scrollToBottom = () => {
     this.messageEndRef.current.scrollIntoView({ behavior: "smooth" });
   };

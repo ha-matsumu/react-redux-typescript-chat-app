@@ -5,6 +5,7 @@ import { ActionTypes } from "./actionTypes";
 // Firebaseと接続
 const messagesRef = firebaseDb.ref("messages");
 
+// 型
 interface RequsetErrorAction extends Action {
   type: ActionTypes.REQUSET_ERROR;
   error: object;
@@ -20,6 +21,7 @@ interface AddChatSuccessAction extends Action {
   add_chat: object;
 }
 
+// Action Creator
 const requestError = (error: object): RequsetErrorAction => {
   return {
     type: ActionTypes.REQUSET_ERROR,
@@ -41,6 +43,7 @@ const addChatSuccess = (inputData: object): AddChatSuccessAction => {
   };
 };
 
+// Actions
 export const fetchChatList = () => async dispatch => {
   try {
     messagesRef.on("value", async snapshot => {

@@ -16,7 +16,7 @@ interface Props {
 
 const Chat: React.SFC<Props> = ({ chat }) => {
   moment.locale("ja");
-  const regexp = new RegExp("日前|ヶ月前|年前");
+  const regexp = new RegExp("日前|ヶ月前|年前"); // 正規表現
 
   return (
     <div className="chat">

@@ -2,7 +2,7 @@ import { Map } from "immutable";
 import { ActionTypes } from "../actions/actionTypes";
 import { ChatActions } from "../actions/chat";
 
-const chatReducer = (state, action: ChatActions) => {
+const chatReducer = (state: any, action: ChatActions) => {
   switch (action.type) {
     case ActionTypes.REQUSET_ERROR:
       return state.set("error", action.error);
