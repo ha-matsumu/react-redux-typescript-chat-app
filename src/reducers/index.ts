@@ -2,10 +2,10 @@
 // このファイルについては理解できなくて OK です
 
 import { combineReducers } from "redux";
-import app from "./app";
+import appReducer from "./app";
 import cahtReducer from "./chat";
 
 export default combineReducers({
-  app,
+  appReducer,
   cahtReducer
 });

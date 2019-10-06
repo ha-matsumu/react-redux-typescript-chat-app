@@ -42,7 +42,7 @@ export class App extends React.Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    name: state.app.get("login_user_name"),
+    name: state.appReducer.get("login_user_name"),
     chatList: state.cahtReducer.get("fetch_chat_list"),
     error: state.cahtReducer.get("error")
   };
