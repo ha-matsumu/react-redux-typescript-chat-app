@@ -27,11 +27,7 @@ export class App extends React.Component<Props> {
     return (
       <Container>
         <Header name={name} />
-        <ChatList
-          name={name}
-          chatList={chatList}
-          addChat={chat_actions.addChat}
-        />
+        <ChatList chatList={chatList} addChat={chat_actions.addChat} />
         <Form>
           {this.props.name ? (
             <ChatForm name={this.props.name} addChat={chat_actions.addChat} />
