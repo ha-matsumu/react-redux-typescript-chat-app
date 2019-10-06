@@ -26,13 +26,13 @@ export class App extends React.Component<Props> {
 
     return (
       <Container>
-        <Header name={name} />
+        <Header name={name} logout={app_actions.logout} />
         <ChatList chatList={chatList} addChat={chat_actions.addChat} />
         <Form>
-          {this.props.name ? (
-            <ChatForm name={this.props.name} addChat={chat_actions.addChat} />
-          ) : (
+          {this.props.name === "ゲスト" ? (
             <UserForm clickSubmitHnadler={app_actions.login} />
+          ) : (
+            <ChatForm name={this.props.name} addChat={chat_actions.addChat} />
           )}
         </Form>
       </Container>

@@ -6,7 +6,9 @@ export default function(state, action: AppActions) {
   switch (action.type) {
     case ActionTypes.APP_LOGIN:
       return state.set("login_user_name", action.login_user_name);
+    case ActionTypes.APP_LOGOUT:
+      return state.set("login_user_name", action.login_user_name);
     default:
   }
-  return state || Map({ login_user_name: "" });
+  return state || Map({ login_user_name: "ゲスト" });
 }
