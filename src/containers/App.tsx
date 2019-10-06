@@ -13,19 +13,16 @@ interface Props {
   name: string;
   chatList: object;
   app_actions: any;
-  fetchChatList: Function;
-  addChat: Function;
+  chat_actions: any;
 }
 
-interface State {}
-
-export class App extends React.Component<Props, State> {
+export class App extends React.Component<Props> {
   componentDidMount() {
-    this.props.fetchChatList();
+    this.props.chat_actions.fetchChatList();
   }
 
   render() {
-    const { app_actions, name, chatList } = this.props;
+    const { app_actions, chat_actions, name, chatList } = this.props;
 
     return (
       <Container>
@@ -33,11 +30,11 @@ export class App extends React.Component<Props, State> {
         <ChatList
           name={name}
           chatList={chatList}
-          addChat={this.props.addChat}
+          addChat={chat_actions.addChat}
         />
         <Form>
           {this.props.name ? (
-            <ChatForm name={this.props.name} addChat={this.props.addChat} />
+            <ChatForm name={this.props.name} addChat={chat_actions.addChat} />
           ) : (
             <UserForm clickSubmitHnadler={app_actions.login} />
           )}
@@ -50,17 +47,15 @@ export class App extends React.Component<Props, State> {
 function mapStateToProps(state) {
   return {
     name: state.app.get("login_user_name"),
-    chatList: state.cahtReducer.chatList,
-    loading: state.cahtReducer.loading,
-    error: state.cahtReducer.error
+    chatList: state.cahtReducer.get("fetch_chat_list"),
+    error: state.cahtReducer.get("error")
   };
 }
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
     app_actions: bindActionCreators(App_actions, dispatch),
-    fetchChatList: () => dispatch(Chat_actions.fetchChatList()),
-    addChat: inputData => dispatch(Chat_actions.addChat(inputData))
+    chat_actions: bindActionCreators(Chat_actions, dispatch)
   };
 }
 

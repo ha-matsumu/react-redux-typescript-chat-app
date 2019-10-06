@@ -1,60 +1,17 @@
-interface InitialState {
-  chatList: object;
-  loading: boolean;
-  error: boolean;
-}
+import { Map } from "immutable";
+import { ActionTypes } from "../actions/actionTypes";
+import { ChatActions } from "../actions/chat";
 
-const initialState: InitialState = {
-  chatList: {},
-  loading: false,
-  error: false
-};
-
-const requestStart = (state, action) => {
-  return {
-    ...state,
-    loading: true
-  };
-};
-
-const requestError = (state, action) => {
-  return {
-    ...state,
-    loading: false,
-    error: true
-  };
-};
-
-const fetchChatListSuccess = (state, action) => {
-  return {
-    ...state,
-    chatList: action.chatList,
-    loading: false,
-    error: false
-  };
-};
-
-const addChatSuccess = (state, action) => {
-  return {
-    ...state,
-    chatList: [...state.chatList, action.inputData],
-    loading: false,
-    error: false
-  };
-};
-
-const chatReducer = (state = initialState, action) => {
+const chatReducer = (state, action: ChatActions) => {
   switch (action.type) {
-    case "REQEST_START":
-      return requestStart(state, action);
-    case "REQEST_ERROR":
-      return requestError(state, action);
-    case "FETCH_CHAT_LIST_SUCCESS":
-      return fetchChatListSuccess(state, action);
-    case "ADD_CHAT_SUCCESS":
-      return addChatSuccess(state, action);
+    case ActionTypes.REQUSET_ERROR:
+      return state.set("error", action.error);
+    case ActionTypes.FETCH_CHAT_LIST_SUCCESS:
+      return state.set("fetch_chat_list", action.fetch_chat_list);
+    case ActionTypes.ADD_CHAT_SUCCESS:
+      return state.set("add_chat", action.add_chat);
     default:
-      return state;
+      return state || Map({ fetch_chat_list: {}, add_chat: {} });
   }
 };
 
