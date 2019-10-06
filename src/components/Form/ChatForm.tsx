@@ -1,4 +1,6 @@
 import * as React from "react";
+import moment = require("moment");
+import "moment-timezone";
 import "./Form.css";
 import { useInput } from "../../customHooks/useInput";
 
@@ -16,7 +18,7 @@ interface UseInput {
 interface Chat {
   username: string;
   message: string;
-  time: string;
+  date: string;
 }
 
 const ChatForm: React.FC<Props> = ({ name, addChat }) => {
@@ -30,12 +32,12 @@ const ChatForm: React.FC<Props> = ({ name, addChat }) => {
       return;
     }
 
-    const now = new Date(); // 現在日時取得
+    moment.tz.setDefault("Asia/Tokyo");
 
     const chat: Chat = {
       username: name,
       message: value,
-      time: now.toLocaleString()
+      date: moment().toISOString()
     };
 
     addChat(chat);
