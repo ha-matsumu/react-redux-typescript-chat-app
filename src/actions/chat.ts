@@ -1,39 +1,48 @@
+import { Action } from "redux";
 import { firebaseDb } from "../../firebase/index";
+import { ActionTypes } from "./actionTypes";
 
 // Firebaseと接続
 const messagesRef = firebaseDb.ref("messages");
 
-const requestStart = () => {
-  return {
-    type: "REQUEST_START"
-  };
-};
+interface RequsetErrorAction extends Action {
+  type: ActionTypes.REQUSET_ERROR;
+  error: object;
+}
 
-const requestError = error => {
+interface FetchChatListSuccessAction extends Action {
+  type: ActionTypes.FETCH_CHAT_LIST_SUCCESS;
+  fetch_chat_list: object;
+}
+
+interface AddChatSuccessAction extends Action {
+  type: ActionTypes.ADD_CHAT_SUCCESS;
+  add_chat: object;
+}
+
+const requestError = (error: object): RequsetErrorAction => {
   return {
-    type: "REQUEST_ERROR",
+    type: ActionTypes.REQUSET_ERROR,
     error: error
   };
 };
 
-const fetchChatListSuccess = (chatList: []) => {
+const fetchChatListSuccess = (chatList: object): FetchChatListSuccessAction => {
   return {
-    type: "FETCH_CHAT_LIST_SUCCESS",
-    chatList: chatList
+    type: ActionTypes.FETCH_CHAT_LIST_SUCCESS,
+    fetch_chat_list: chatList
   };
 };
 
-const addChatSuccess = (inputData: object) => {
+const addChatSuccess = (inputData: object): AddChatSuccessAction => {
   return {
-    type: "ADD_CHAT_SUCCESS",
-    inputData
+    type: ActionTypes.ADD_CHAT_SUCCESS,
+    add_chat: inputData
   };
 };
 
 export const fetchChatList = () => async dispatch => {
   try {
-    await dispatch(requestStart());
-
     messagesRef.on("value", async snapshot => {
       let chatList = snapshot.val();
       await dispatch(fetchChatListSuccess(chatList));
@@ -45,8 +54,6 @@ export const fetchChatList = () => async dispatch => {
 
 export const addChat = inputData => async dispatch => {
   try {
-    await dispatch(requestStart());
-
     let chat = firebaseDb.ref("messages/").push();
     await chat.set(inputData);
 
@@ -55,3 +62,8 @@ export const addChat = inputData => async dispatch => {
     await dispatch(requestError(error));
   }
 };
+
+export type ChatActions =
+  | RequsetErrorAction
+  | FetchChatListSuccessAction
+  | AddChatSuccessAction;

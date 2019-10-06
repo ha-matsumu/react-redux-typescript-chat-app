@@ -9,11 +9,10 @@ interface Chat {
 
 interface Props {
   key: string;
-  name: string;
   chat: Chat;
 }
 
-const Chat: React.SFC<Props> = ({ name, chat }) => {
+const Chat: React.SFC<Props> = ({ chat }) => {
   return (
     <div className="chat">
       <p className="username">{chat.username}</p>

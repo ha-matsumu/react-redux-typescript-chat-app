@@ -93966,6 +93966,27 @@ exports["default"] = (function (_a) {
 
 /***/ }),
 
+/***/ "./src/actions/actionTypes.ts":
+/*!************************************!*\
+  !*** ./src/actions/actionTypes.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var ActionTypes;
+(function (ActionTypes) {
+    ActionTypes["APP_LOGIN"] = "APP_LOGIN";
+    ActionTypes["REQUSET_ERROR"] = "REQUSET_ERROR";
+    ActionTypes["FETCH_CHAT_LIST_SUCCESS"] = "FETCH_CHAT_LIST_SUCCESS";
+    ActionTypes["ADD_CHAT_SUCCESS"] = "ADD_CHAT_SUCCESS";
+})(ActionTypes = exports.ActionTypes || (exports.ActionTypes = {}));
+
+
+/***/ }),
+
 /***/ "./src/actions/app.ts":
 /*!****************************!*\
   !*** ./src/actions/app.ts ***!
@@ -93976,9 +93997,10 @@ exports["default"] = (function (_a) {
 "use strict";
 
 exports.__esModule = true;
+var actionTypes_1 = __webpack_require__(/*! ./actionTypes */ "./src/actions/actionTypes.ts");
 function login(name) {
     return {
-        type: "APP_LOGIN",
+        type: actionTypes_1.ActionTypes.APP_LOGIN,
         login_user_name: name
     };
 }
@@ -94034,29 +94056,25 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var index_1 = __webpack_require__(/*! ../../firebase/index */ "./firebase/index.ts");
+var actionTypes_1 = __webpack_require__(/*! ./actionTypes */ "./src/actions/actionTypes.ts");
 // Firebaseと接続
 var messagesRef = index_1.firebaseDb.ref("messages");
-var requestStart = function () {
-    return {
-        type: "REQUEST_START"
-    };
-};
 var requestError = function (error) {
     return {
-        type: "REQUEST_ERROR",
+        type: actionTypes_1.ActionTypes.REQUSET_ERROR,
         error: error
     };
 };
 var fetchChatListSuccess = function (chatList) {
     return {
-        type: "FETCH_CHAT_LIST_SUCCESS",
-        chatList: chatList
+        type: actionTypes_1.ActionTypes.FETCH_CHAT_LIST_SUCCESS,
+        fetch_chat_list: chatList
     };
 };
 var addChatSuccess = function (inputData) {
     return {
-        type: "ADD_CHAT_SUCCESS",
-        inputData: inputData
+        type: actionTypes_1.ActionTypes.ADD_CHAT_SUCCESS,
+        add_chat: inputData
     };
 };
 exports.fetchChatList = function () { return function (dispatch) { return __awaiter(void 0, void 0, void 0, function () {
@@ -94064,10 +94082,7 @@ exports.fetchChatList = function () { return function (dispatch) { return __awai
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                _a.trys.push([0, 2, , 4]);
-                return [4 /*yield*/, dispatch(requestStart())];
-            case 1:
-                _a.sent();
+                _a.trys.push([0, 1, , 3]);
                 messagesRef.on("value", function (snapshot) { return __awaiter(void 0, void 0, void 0, function () {
                     var chatList;
                     return __generator(this, function (_a) {
@@ -94081,14 +94096,14 @@ exports.fetchChatList = function () { return function (dispatch) { return __awai
                         }
                     });
                 }); });
-                return [3 /*break*/, 4];
-            case 2:
+                return [3 /*break*/, 3];
+            case 1:
                 error_1 = _a.sent();
                 return [4 /*yield*/, dispatch(requestError(error_1))];
-            case 3:
+            case 2:
                 _a.sent();
-                return [3 /*break*/, 4];
-            case 4: return [2 /*return*/];
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
         }
     });
 }); }; };
@@ -94097,25 +94112,22 @@ exports.addChat = function (inputData) { return function (dispatch) { return __a
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                _a.trys.push([0, 4, , 6]);
-                return [4 /*yield*/, dispatch(requestStart())];
-            case 1:
-                _a.sent();
+                _a.trys.push([0, 3, , 5]);
                 chat = index_1.firebaseDb.ref("messages/").push();
                 return [4 /*yield*/, chat.set(inputData)];
-            case 2:
+            case 1:
                 _a.sent();
                 return [4 /*yield*/, dispatch(addChatSuccess(inputData))];
-            case 3:
+            case 2:
                 _a.sent();
-                return [3 /*break*/, 6];
-            case 4:
+                return [3 /*break*/, 5];
+            case 3:
                 error_2 = _a.sent();
                 return [4 /*yield*/, dispatch(requestError(error_2))];
-            case 5:
+            case 4:
                 _a.sent();
-                return [3 /*break*/, 6];
-            case 6: return [2 /*return*/];
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
         }
     });
 }); }; };
@@ -94163,7 +94175,7 @@ exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Chat.css */ "./src/components/Chat/Chat.css");
 var Chat = function (_a) {
-    var name = _a.name, chat = _a.chat;
+    var chat = _a.chat;
     return (React.createElement("div", { className: "chat" },
         React.createElement("p", { className: "username" }, chat.username),
         React.createElement("p", { className: "time" }, chat.time),
@@ -94371,14 +94383,14 @@ var App = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.componentDidMount = function () {
-        this.props.fetchChatList();
+        this.props.chat_actions.fetchChatList();
     };
     App.prototype.render = function () {
-        var _a = this.props, app_actions = _a.app_actions, name = _a.name, chatList = _a.chatList;
+        var _a = this.props, app_actions = _a.app_actions, chat_actions = _a.chat_actions, name = _a.name, chatList = _a.chatList;
         return (React.createElement(Container, null,
             React.createElement(Header_1["default"], { name: name }),
-            React.createElement(ChatList_1["default"], { name: name, chatList: chatList, addChat: this.props.addChat }),
-            React.createElement(Form, null, this.props.name ? (React.createElement(ChatForm_1["default"], { name: this.props.name, addChat: this.props.addChat })) : (React.createElement(UserForm_1["default"], { clickSubmitHnadler: app_actions.login })))));
+            React.createElement(ChatList_1["default"], { name: name, chatList: chatList, addChat: chat_actions.addChat }),
+            React.createElement(Form, null, this.props.name ? (React.createElement(ChatForm_1["default"], { name: this.props.name, addChat: chat_actions.addChat })) : (React.createElement(UserForm_1["default"], { clickSubmitHnadler: app_actions.login })))));
     };
     return App;
 }(React.Component));
@@ -94386,16 +94398,14 @@ exports.App = App;
 function mapStateToProps(state) {
     return {
         name: state.app.get("login_user_name"),
-        chatList: state.cahtReducer.chatList,
-        loading: state.cahtReducer.loading,
-        error: state.cahtReducer.error
+        chatList: state.cahtReducer.get("fetch_chat_list"),
+        error: state.cahtReducer.get("error")
     };
 }
 function mapDispatchToProps(dispatch) {
     return {
         app_actions: redux_1.bindActionCreators(App_actions, dispatch),
-        fetchChatList: function () { return dispatch(Chat_actions.fetchChatList()); },
-        addChat: function (inputData) { return dispatch(Chat_actions.addChat(inputData)); }
+        chat_actions: redux_1.bindActionCreators(Chat_actions, dispatch)
     };
 }
 exports["default"] = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(App);
@@ -94481,7 +94491,7 @@ var ChatList = /** @class */ (function (_super) {
         return (React.createElement("div", { className: "chat-list-wrapper" },
             chatList
                 ? Object.keys(chatList).map(function (key) {
-                    return React.createElement(Chat_1["default"], { key: key, name: name, chat: chatList[key] });
+                    return React.createElement(Chat_1["default"], { key: key, chat: chatList[key] });
                 })
                 : null,
             React.createElement("div", { className: "message-end", ref: this.messageEndRef })));
@@ -94554,9 +94564,10 @@ react_dom_1.render(React.createElement(Root_1["default"], { store: store }), doc
 
 exports.__esModule = true;
 var immutable_1 = __webpack_require__(/*! immutable */ "./node_modules/immutable/dist/immutable.js");
+var actionTypes_1 = __webpack_require__(/*! ../actions/actionTypes */ "./src/actions/actionTypes.ts");
 function default_1(state, action) {
     switch (action.type) {
-        case "APP_LOGIN":
+        case actionTypes_1.ActionTypes.APP_LOGIN:
             return state.set("login_user_name", action.login_user_name);
         default:
     }
@@ -94576,55 +94587,19 @@ exports["default"] = default_1;
 
 "use strict";
 
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
 exports.__esModule = true;
-var initialState = {
-    chatList: {},
-    loading: false,
-    error: false
-};
-var requestStart = function (state, action) {
-    return __assign(__assign({}, state), { loading: true });
-};
-var requestError = function (state, action) {
-    return __assign(__assign({}, state), { loading: false, error: true });
-};
-var fetchChatListSuccess = function (state, action) {
-    return __assign(__assign({}, state), { chatList: action.chatList, loading: false, error: false });
-};
-var addChatSuccess = function (state, action) {
-    return __assign(__assign({}, state), { chatList: __spreadArrays(state.chatList, [action.inputData]), loading: false, error: false });
-};
+var immutable_1 = __webpack_require__(/*! immutable */ "./node_modules/immutable/dist/immutable.js");
+var actionTypes_1 = __webpack_require__(/*! ../actions/actionTypes */ "./src/actions/actionTypes.ts");
 var chatReducer = function (state, action) {
-    if (state === void 0) { state = initialState; }
     switch (action.type) {
-        case "REQEST_START":
-            return requestStart(state, action);
-        case "REQEST_ERROR":
-            return requestError(state, action);
-        case "FETCH_CHAT_LIST_SUCCESS":
-            return fetchChatListSuccess(state, action);
-        case "ADD_CHAT_SUCCESS":
-            return addChatSuccess(state, action);
+        case actionTypes_1.ActionTypes.REQUSET_ERROR:
+            return state.set("error", action.error);
+        case actionTypes_1.ActionTypes.FETCH_CHAT_LIST_SUCCESS:
+            return state.set("fetch_chat_list", action.fetch_chat_list);
+        case actionTypes_1.ActionTypes.ADD_CHAT_SUCCESS:
+            return state.set("add_chat", action.add_chat);
         default:
-            return state;
+            return state || immutable_1.Map({ fetch_chat_list: {}, add_chat: {} });
     }
 };
 exports["default"] = chatReducer;
