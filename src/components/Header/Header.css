@@ -16,7 +16,7 @@ header {
 }
 
 .logo {
-  margin-left: 1rem;
+  margin-left: 0.3rem;
   color: #46453a;
 }
 
@@ -29,4 +29,29 @@ header {
   top: 12px;
   right: 1rem;
   color: #46453a;
+}
+
+.logout-button {
+  margin-left: 10px;
+  width: 100px;
+  height: 32px;
+  color: #fff;
+  border: none;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  background: #0c71f8;
+  display: inline-block;
+  -webkit-appearance: none;
+  outline: 0;
+  cursor: pointer;
+  backface-visibility: hidden;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.logout-button:hover {
+  opacity: 0.8;
 }

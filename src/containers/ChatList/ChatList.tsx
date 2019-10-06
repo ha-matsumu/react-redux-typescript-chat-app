@@ -3,7 +3,6 @@ import "./ChatList.css";
 import Chat from "../../components/Chat/Chat";
 
 interface Props {
-  name: string;
   chatList: object;
   addChat: Function;
 }
@@ -30,7 +29,7 @@ class ChatList extends React.Component<Props> {
   };
 
   render() {
-    const { name, chatList } = this.props;
+    const { chatList } = this.props;
 
     return (
       <div className="chat-list-wrapper">

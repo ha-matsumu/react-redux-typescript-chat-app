@@ -26,17 +26,13 @@ export class App extends React.Component<Props> {
 
     return (
       <Container>
-        <Header name={name} />
-        <ChatList
-          name={name}
-          chatList={chatList}
-          addChat={chat_actions.addChat}
-        />
+        <Header name={name} logout={app_actions.logout} />
+        <ChatList chatList={chatList} addChat={chat_actions.addChat} />
         <Form>
-          {this.props.name ? (
-            <ChatForm name={this.props.name} addChat={chat_actions.addChat} />
-          ) : (
+          {this.props.name === "ゲスト" ? (
             <UserForm clickSubmitHnadler={app_actions.login} />
+          ) : (
+            <ChatForm name={this.props.name} addChat={chat_actions.addChat} />
           )}
         </Form>
       </Container>
@@ -46,7 +42,7 @@ export class App extends React.Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    name: state.app.get("login_user_name"),
+    name: state.appReducer.get("login_user_name"),
     chatList: state.cahtReducer.get("fetch_chat_list"),
     error: state.cahtReducer.get("error")
   };
